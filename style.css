@@ -1,0 +1,150 @@
+html {
+    height: 100%;
+}
+
+.main {
+    margin-bottom: 0%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    padding: 20px;
+    background-color: antiquewhite;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+    }
+}
+
+.left_section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #f1f1f1;
+    padding: 40px;
+}
+
+.country_property {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 40px;
+}
+
+
+
+#right_section {
+    width: 80%;
+    margin-bottom: 0%;
+    min-height: 90vh;
+}
+
+@media screen and (max-width: 992px) {
+    #right_section {
+        width: 100%;
+        margin-bottom: 0%;
+        min-height: 90vh;
+    }
+}
+
+#search_container {
+    display: flex;
+    justify-content: center;
+}
+
+#search {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    background: #f1f1f1;
+    margin-bottom: 30px;
+    border-radius: 12px;
+}
+
+.list-group-flush {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list-group-item {
+    background-color: darkgray;
+    font-size: 18px;
+    padding: 20px;
+    border-bottom: 2px solid gray;
+    cursor: pointer;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.list-group-item:hover {
+    background-color: white
+}
+
+li {
+    text-decoration: none;
+
+}
+
+#footer {
+    display: flex;
+    bottom: 0;
+    height: 40px;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: beige;
+    width: 100%;
+    justify-content: center;
+}
+
+#error {
+    opacity: 0;
+
+}
+
+#error.waa {
+
+    color: red;
+    opacity: 1;
+    transition: opacity 500ms;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+.countrie_not_found {
+    color: red;
+}
+
+
+  p {
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    text-align: justify;
+    text-transform: capitalize;
+    line-height: 1.6;
+
+  }

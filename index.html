@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--javascript file-->
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuS-XytbYm1R1qIGgPrQHvJ_cuvS1Up5s&callback=initMap"></script>
+
+    <title> Google map API </title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+    <div class="main">
+
+        <div class="header">
+            this is my web site
+        </div>
+        <div class="container">
+
+            <div class="left_section">
+
+                <div id="error"> please don't make an empty request </div>
+                <div id="search_container">
+                    <input placeholder="Search" name="search" id="search" autofocus  />
+                </div>
+
+                <div id="country_information"></div>
+                <div>
+                    <ul class="list-group-flush" id="country-list">
+                        <li class="list-group-item"></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="country_property">
+                <div class="country_not_found"></div>
+                <div class="country_property_section1" id="country_property_section">
+                    <img />
+                    <h2></h2>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="map" id="right_section"> </div>
+        </div>
+
+
+        <div id="footer">I am footer</div>
+    </div>
+
+
+    <!-- jquery dependency-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
