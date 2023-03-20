@@ -101,7 +101,7 @@ function initMap(data) {
 
     let lng = data?.latlng[1] ? data?.latlng[1] : 38.7578;
 
-    let country_name = data?.name.common ? data?.name.common : "Sample";
+    let country_name = data?.name.common ? data?.name.common : "";
 
     var map;
 
