@@ -240,5 +240,7 @@ $(document).on("click", "#listC", function () {
     getCountryName(thisCountry);
 });
 
+
+
 //display current day & time into this format by using moment js
 $("#currentDay").text(moment().format("MMMM Do YYYY"));

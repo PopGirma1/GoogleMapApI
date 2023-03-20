@@ -1,5 +1,6 @@
 html {
     height: 100%;
+    width: 100%;
 }
 
 .main {
@@ -12,6 +13,7 @@ html {
 
 /* header  start*/
 .header {
+    white-space: normal; 
     overflow: hidden;
     background-color: #f1f1f1;
     padding: 20px 10px;
@@ -62,6 +64,7 @@ html {
 /* header end */
 
 .container {
+    
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -79,6 +82,7 @@ html {
 }
 
 .left_section {
+
     display: flex;
     flex-direction: column;
     gap: 20px;
