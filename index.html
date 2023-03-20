@@ -20,8 +20,14 @@
     <div class="main">
 
         <div class="header">
-            this is my web site
+            <a href="#default" class="logo">Logo</a>
+            <div class="header-right">
+                <a class="active" href="#home">Home</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>
+            </div>
         </div>
+
         <div class="container">
 
             <div class="left_section">
@@ -56,12 +62,35 @@
         </div>
 
 
-        <div id="footer">I am footer</div>
+        <div id="footer">
+
+            <div class="row copyright">
+                <div class="footer-menu">
+
+                    <a href="">Home</a>
+                    <a href="">About</a>
+                    <a href="">Contact</a>
+                    <a href="">Blog</a>
+                    <a href="">Social</a>
+
+                </div>
+                <p>Copyright &copy; <span id="currentDay"> </span> Bootcamp Developers</p>
+            </div>
+
+
+        </div>
     </div>
 
 
     <!-- jquery dependency-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- add moment js for the date  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script src="script.js"></script>
 
 </body>

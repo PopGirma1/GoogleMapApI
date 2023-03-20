@@ -52,7 +52,7 @@ const getCountryName = function (countryName) {
 
     headers.append('Content-Type', 'application/json');
     headers.append('Accept', 'application/json');
-    headers.append('Origin', 'http://127.0.0.1:5500');
+    headers.append('Origin', '*');
 
     fetch(`https://restcountries.com/v3.1/name/${countryName}`, {
         mode: 'cors',
@@ -61,7 +61,13 @@ const getCountryName = function (countryName) {
         headers: headers
     }).then(function (res) {
 
-        if (!res.ok) throw new Error(`country not found (${res.status})`)
+
+        if (!res.ok) {
+
+            $("#right_section").empty()
+
+            throw new Error(`country not found (${res.status})`)
+        }
 
         return res.json();
 
@@ -90,6 +96,10 @@ const getCountryName = function (countryName) {
 
 function initMap(data) {
 
+    if (data === undefined && data !== null) {
+        return
+    }
+
     $(".country_property").empty();
 
     const currency = data?.currencies
@@ -97,11 +107,11 @@ function initMap(data) {
 
     // map starts here
 
-    let lat = data?.latlng[0] ? data?.latlng[0] : 8.9806;
+    let lat = data?.latlng[0];
 
-    let lng = data?.latlng[1] ? data?.latlng[1] : 38.7578;
+    let lng = data?.latlng[1];
 
-    let country_name = data?.name.common ? data?.name.common : "";
+    let country_name = data?.name.common;
 
     var map;
 
@@ -118,6 +128,7 @@ function initMap(data) {
             label: country_name,
             title: country_name,
             animation: google.maps.Animation.DROP,
+            draggable: true
 
         })
 
@@ -151,7 +162,7 @@ function initMap(data) {
 
     five_day_div_container.append(Language)
 
-    var Capital = $("<p>").text("Capital: " + `${data.capital ? data.capital : "Capital City Known"}`);
+    var Capital = $("<p>").text("Capital: " + `${data?.capital ? data.capital : "Capital City Known"}`);
 
     five_day_div_container.append(Capital)
 
@@ -228,3 +239,6 @@ $(document).on("click", "#listC", function () {
     var thisCountry = $(this).attr("data-country");
     getCountryName(thisCountry);
 });
+
+//display current day & time into this format by using moment js
+$("#currentDay").text(moment().format("MMMM Do YYYY"));
