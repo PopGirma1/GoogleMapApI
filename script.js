@@ -97,7 +97,7 @@ const getCountryName = function (countryName) {
 function initMap(data) {
 
     if (data === undefined && data !== null) {
-        return
+        getLocation()
     }
 
     $(".country_property").empty();
@@ -126,7 +126,6 @@ function initMap(data) {
             position: { lat: lat, lng: lng },
             map: map,
             label: country_name,
-            title: country_name,
             animation: google.maps.Animation.DROP,
             draggable: true
 
@@ -244,3 +243,34 @@ $(document).on("click", "#listC", function () {
 
 //display current day & time into this format by using moment js
 $("#currentDay").text(moment().format("MMMM Do YYYY"));
+
+// get user current location
+
+var current_location = $("#right_section")
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        current_location.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+
+    var map;
+
+    map = new google.maps.Map(document.getElementById("right_section"), {
+
+        center: { lat: position.coords.latitude, lng: position.coords.longitude },
+        zoom: 10
+    });
+
+    new google.maps.Marker(
+        {
+            position: { lat: position.coords.latitude, lng: position.coords.longitude },
+            map: map,
+            animation: google.maps.Animation.DROP,
+            draggable: true,
+        })
+}
