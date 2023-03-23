@@ -98,7 +98,7 @@ function initMap(data) {
 
     if (data === undefined && data !== null) {
         getLocation()
-       
+
     }
 
     $(".country_property").empty();
@@ -243,7 +243,7 @@ $(document).on("click", "#listC", function () {
 
 
 //display current day & time into this format by using moment js
-$("#currentDay").text(moment().format("MMMM Do YYYY"));
+$("#currentDay").text(moment().format("YYYY"));
 
 // get user current location
 
