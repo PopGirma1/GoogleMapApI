@@ -98,6 +98,7 @@ function initMap(data) {
 
     if (data === undefined && data !== null) {
         getLocation()
+       
     }
 
     $(".country_property").empty();
