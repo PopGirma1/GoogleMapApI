@@ -108,9 +108,9 @@ function initMap(data) {
 
     // map starts here
 
-    let lat = data?.latlng[0];
+    let lat = parseFloat(data?.latlng[0]);
 
-    let lng = data?.latlng[1];
+    let lng = parseFloat(data?.latlng[1]);
 
     let country_name = data?.name.common;
 
@@ -118,13 +118,13 @@ function initMap(data) {
 
     map = new google.maps.Map(document.getElementById("right_section"), {
 
-        center: { lat: lat, lng: lng },
+        center: { lat: +lat, lng: +lng },
         zoom: 10
     });
 
     new google.maps.Marker(
         {
-            position: { lat: lat, lng: lng },
+            position: { lat: +lat, lng: +lng },
             map: map,
             label: country_name,
             animation: google.maps.Animation.DROP,
@@ -134,9 +134,9 @@ function initMap(data) {
 
     // map ends here
 
-    const cur = [...Object.values(currency)]
+    const cur = [...Object.values(currency) || {}]
 
-    const lang = [...Object.values(language)]
+    const lang = [...Object.values(language) || {}]
 
     // country information
 
@@ -263,13 +263,13 @@ function showPosition(position) {
 
     map = new google.maps.Map(document.getElementById("right_section"), {
 
-        center: { lat: position.coords.latitude, lng: position.coords.longitude },
+        center: { lat: +position.coords.latitude, lng: +position.coords.longitude },
         zoom: 10
     });
 
     new google.maps.Marker(
         {
-            position: { lat: position.coords.latitude, lng: position.coords.longitude },
+            position: { lat: +position.coords.latitude, lng: +position.coords.longitude },
             map: map,
             animation: google.maps.Animation.DROP,
             draggable: true,
